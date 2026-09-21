@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Tally</title>
+<meta name="description" content="Privacy policy for Tally by Hearthworks.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<p class="nav"><a href="../">Hearthworks</a> / <a href="./">Tally</a></p>
+<main>
+<h1>Privacy Policy — Tally</h1>
+<p><strong>Effective date:</strong> 2026-09-20<br>
+<strong>Developer:</strong> Hearthworks<br>
+<strong>App:</strong> Tally (bundle id <code>io.hearthworks.tally</code>)<br>
+<strong>Contact:</strong> HUMAN-REQUIRED: contact_email in factory/config.local.json</p>
+<blockquote>
+<p>This document is drafted by the factory's release-manager from <code>apps/tally/factory/design.md</code>'s privacy data inventory (dated 2026-09-20) and verified against the app's source code (see the grep evidence in <code>review-notes.md</code>). It is a draft, not legal advice: the human owns it legally and must review it. The contact email and hosting URL are human-owned prerequisites (<code>factory/config.local.json</code> keys <code>contact_email</code>, <code>privacy_policy_url</code>) that are currently empty, so this document marks them <code>HUMAN-REQUIRED:</code> rather than asserting a provisional value is real; both must be set and the document re-hosted before any TestFlight build reaches a tester (ASC requires a reachable privacy policy URL on the app record). <code>apps/tally/factory/status.json</code> records <code>internal_only: true</code> — this app is not going to the public App Store, but the policy below is written to be accurate for TestFlight internal testing regardless.</p>
+</blockquote>
+<h2>Summary</h2>
+<p>Tally stores your data on your device only. We do not collect it, we cannot see it, and we have no way to receive it — the app contains no networking code of any kind.</p>
+<h2>What we collect</h2>
+<p><strong>Nothing.</strong> Tally has no analytics, no crash reporter, no account system and no network access, so there is no data type for Hearthworks (the developer) to collect. The table below exists to show exactly what data the app <em>creates and stores</em>, all of it on your device only:</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>data</th>
+<th>why</th>
+<th>where it is stored</th>
+<th>who can see it</th>
+<th>retention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Counter name (text you type)</td>
+<td>to label the thing you're counting</td>
+<td>on-device only, in the app's local SwiftData/SQLite store</td>
+<td>only you, on this device</td>
+<td>until you swipe-delete the counter or delete the app</td>
+</tr>
+<tr>
+<td>Counter creation date</td>
+<td>sorts your counters, oldest first</td>
+<td>on-device only, same store</td>
+<td>only you</td>
+<td>same as above</td>
+</tr>
+<tr>
+<td>Tap timestamp</td>
+<td>builds the per-counter history the app exists to show you</td>
+<td>on-device only, same store</td>
+<td>only you</td>
+<td>until you long-press to remove the latest tap, delete the counter, or delete the app</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This table summarizes the user-facing items from <code>apps/tally/factory/design.md</code>'s privacy data inventory, which additionally lists purely internal-framework items (the counter↔event relationship, SwiftData's internal <code>PersistentIdentifier</code>, test-only store copies created solely by an XCUITest launch argument, and framework-written UserDefaults housekeeping) — none of them user-typed, none of them different in kind from the rows above: on-device only, never linked to identity, never used for tracking. <code>privacy-labels.json</code>'s <code>privacy_manifest_consistency</code> block and <code>PrivacyInfo.xcprivacy</code>'s <code>CA92.1</code> entry account for the UserDefaults item specifically. No item in either the table above or the fuller <code>design.md</code> inventory ever leaves the device.</p>
+<h2>What we do not collect</h2>
+<ul>
+<li>No analytics SDK of any kind (confirmed: no Firebase, no Sentry, no AppsFlyer, no similar symbol anywhere in the app's source).</li>
+<li>No advertising identifier (IDFA), no <code>ATTrackingManager</code>, no <code>AdSupport</code> framework.</li>
+<li>No tracking across other companies' apps or websites.</li>
+<li>No accounts, no sign-in, no user profiles, no email address, no name beyond the counter labels you choose to type (which describe what you're counting, not you).</li>
+<li>No location, camera, photo library, microphone, contacts, health, or calendar data — Tally never requests any of these permissions.</li>
+<li>No network requests of any kind — there is no <code>URLSession</code>, no web view, and no code path in the app that can send or receive data over a network.</li>
+</ul>
+<h2>iCloud / CloudKit</h2>
+<p>Not applicable. Tally does not use iCloud or CloudKit (<code>cloudkit: false</code> in the app's build configuration). There is no sync, no shared container, and no iCloud account state the app reads. Your data lives on one device and does not travel with you to a second device.</p>
+<h2>Purchases</h2>
+<p>Not applicable. Tally has no in-app purchases, no subscriptions, and no StoreKit products in this version.</p>
+<h2>Third parties</h2>
+<p><strong>None.</strong> Tally has zero third-party dependencies (no Swift packages, no binary frameworks — see <code>apps/tally/project.yml</code>, which has no <code>packages:</code> section) and shares data with no third party, because it collects none to share.</p>
+<h2>Children</h2>
+<p>Tally has no user accounts, no chat or messaging, no user-generated content shared with anyone else, and no advertising. Nothing about the app depends on knowing a user's age, and it collects no personal information from anyone, including children. It is rated 4+ (see <code>metadata.md</code>).</p>
+<h2>Your rights</h2>
+<p>Because everything Tally stores lives only on your device:</p>
+<ul>
+<li><strong>Delete a single counter and its history:</strong> swipe left on the counter in the list and tap Delete. This removes it immediately (no confirmation, no undo — standard for this destructive action).</li>
+<li><strong>Delete everything:</strong> delete the app. Its local store is removed with it.</li>
+<li><strong>Export:</strong> not available in this version; there is nothing to request from Hearthworks because Hearthworks never receives your data in the first place.</li>
+<li><strong>Questions:</strong> contact us at the email above.</li>
+</ul>
+<h2>Changes to this policy</h2>
+<p>If this policy changes, the new version will be dated at the top and made available at the hosting URL on the app's App Store Connect record. There is no mailing list or in-app notice mechanism in this version, since the app has no network access to deliver one.</p>
+<h2>Contact</h2>
+<p>HUMAN-REQUIRED: contact_email in factory/config.local.json</p>
+<p>The hosting URL for this document (<code>privacy_policy_url</code> in <code>metadata.md</code>) is likewise <code>HUMAN-REQUIRED: privacy_policy_url in factory/config.local.json</code>. Both are human-owned prerequisites that are currently empty; see <code>release-brief.md</code>'s checklist. Neither value in this document is asserted to be real or reachable — the markers above must be replaced with real, reachable values before any TestFlight build reaches a tester.</p>
+</main>
+<footer>
+
+<p>Contact: <a href="mailto:mark@hearthworks.io">mark@hearthworks.io</a></p>
+<p class="fine">&copy; 2026 Hearthworks. Updated 2026-09-20.
+<a href="./">Tally</a> &middot; <a href="support.html">Support</a></p>
+</footer>
+</body>
+</html>
