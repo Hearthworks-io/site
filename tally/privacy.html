@@ -14,9 +14,9 @@
 <p><strong>Effective date:</strong> 2026-09-20<br>
 <strong>Developer:</strong> Hearthworks<br>
 <strong>App:</strong> Tally (bundle id <code>io.hearthworks.tally</code>)<br>
-<strong>Contact:</strong> HUMAN-REQUIRED: contact_email in factory/config.local.json</p>
+<strong>Contact:</strong> mark@hearthworks.io</p>
 <blockquote>
-<p>This document is drafted by the factory's release-manager from <code>apps/tally/factory/design.md</code>'s privacy data inventory (dated 2026-09-20) and verified against the app's source code (see the grep evidence in <code>review-notes.md</code>). It is a draft, not legal advice: the human owns it legally and must review it. The contact email and hosting URL are human-owned prerequisites (<code>factory/config.local.json</code> keys <code>contact_email</code>, <code>privacy_policy_url</code>) that are currently empty, so this document marks them <code>HUMAN-REQUIRED:</code> rather than asserting a provisional value is real; both must be set and the document re-hosted before any TestFlight build reaches a tester (ASC requires a reachable privacy policy URL on the app record). <code>apps/tally/factory/status.json</code> records <code>internal_only: true</code> — this app is not going to the public App Store, but the policy below is written to be accurate for TestFlight internal testing regardless.</p>
+<p>This document is drafted by the factory's release-manager from <code>apps/tally/factory/design.md</code>'s privacy data inventory (dated 2026-09-20) and verified against the app's source code (see the grep evidence in <code>review-notes.md</code>). It is a draft, not legal advice: the human owns it legally and must review it. The contact email (<code>factory/config.local.json</code>'s <code>contact_email</code>) and the hosting URL (derived from <code>site_base_url</code> by <code>render_site.py</code>) are both set and this document is rendered at that hosting URL (<code>site/tally/privacy.html</code>) with every template field filled in. <code>apps/tally/factory/status.json</code> records <code>internal_only: true</code> — this app is not going to the public App Store, but the policy below is written to be accurate for TestFlight internal testing regardless.</p>
 </blockquote>
 <h2>Summary</h2>
 <p>Tally stores your data on your device only. We do not collect it, we cannot see it, and we have no way to receive it — the app contains no networking code of any kind.</p>
@@ -87,13 +87,13 @@
 <h2>Changes to this policy</h2>
 <p>If this policy changes, the new version will be dated at the top and made available at the hosting URL on the app's App Store Connect record. There is no mailing list or in-app notice mechanism in this version, since the app has no network access to deliver one.</p>
 <h2>Contact</h2>
-<p>HUMAN-REQUIRED: contact_email in factory/config.local.json</p>
-<p>The hosting URL for this document (<code>privacy_policy_url</code> in <code>metadata.md</code>) is likewise <code>HUMAN-REQUIRED: privacy_policy_url in factory/config.local.json</code>. Both are human-owned prerequisites that are currently empty; see <code>release-brief.md</code>'s checklist. Neither value in this document is asserted to be real or reachable — the markers above must be replaced with real, reachable values before any TestFlight build reaches a tester.</p>
+<p>mark@hearthworks.io</p>
+<p>The hosting URL for this document (<code>privacy_policy_url</code> in <code>metadata.md</code>) is <code>https://hearthworks-io.github.io/site/tally/privacy.html</code>. Both values are set and this page is rendered at that URL with every template field filled in; going live still depends on <code>factory/scripts/publish_site.sh</code>, which the orchestrator runs before the PRODUCTION gate.</p>
 </main>
 <footer>
 
 <p>Contact: <a href="mailto:mark@hearthworks.io">mark@hearthworks.io</a></p>
-<p class="fine">&copy; 2026 Hearthworks. Updated 2026-09-20.
+<p class="fine">&copy; 2026 Hearthworks. Updated 2026-09-21.
 <a href="./">Tally</a> &middot; <a href="support.html">Support</a></p>
 </footer>
 </body>
