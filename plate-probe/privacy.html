@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Platerizer</title>
+<meta name="description" content="Privacy policy for Platerizer by Hearthworks.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<p class="nav"><a href="../">Hearthworks</a> / <a href="./">Platerizer</a></p>
+<main>
+<h1>Privacy Policy — Platerizer</h1>
+<p><strong>Effective date:</strong> 2026-09-22<br>
+<strong>Developer:</strong> Hearthworks<br>
+<strong>App:</strong> Platerizer (bundle id <code>io.hearthworks.plateprobe</code>)<br>
+<strong>Contact:</strong> mark@hearthworks.io</p>
+<h2>Summary</h2>
+<p>Platerizer reads a license plate on your own phone, turns it into a salted hash, and shares only that hash — never the plate itself — with other Platerizer users through a shared list. Everything else the app creates, including photos of cars you have tapped, stays on your device. We never see, store, or search a plate number, and we never collect a name, phone number, or location.</p>
+<h2>What we collect</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>data</th>
+<th>why</th>
+<th>where it is stored</th>
+<th>who can see it</th>
+<th>retention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Salted hash of a license plate you tapped, plus a hash-format version number</td>
+<td>So that a hash reported by two or more different people can warn other Platerizer users</td>
+<td>Apple's CloudKit public database (shared across users), and a local copy on your device</td>
+<td>Every Platerizer user's app can read the hash list; Hearthworks does not run a server that reads it separately</td>
+<td>You can retract the reports your device still holds a record of (Settings → Retract my pooled reports); Hearthworks removes everything left in the shared list when the program ends</td>
+</tr>
+<tr>
+<td>A report time, rounded to the hour</td>
+<td>Lets the shared list be understood as it grows</td>
+<td>Apple's CloudKit public database</td>
+<td>Same as above</td>
+<td>Same as above</td>
+</tr>
+<tr>
+<td>Your iCloud account identifier (assigned automatically by Apple when you report a hash)</td>
+<td>Counts how many different people reported the same hash, which is what turns a report into a warning</td>
+<td>Apple's CloudKit public database, as the automatic "record creator" field — Platerizer's code never writes this value itself</td>
+<td>Same as above</td>
+<td>Removed together with your reports when you retract them</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Because the hash is made with a fixed pattern built into the app, the same plate always produces the same hash. That means the hash is a stand-in for a plate, not an untraceable scramble of it — we call this <strong>pseudonymous, not anonymous</strong>, and say so on the consent screen before you use the app. Platerizer never shows, stores in clear, or lets anyone search an actual plate number.</p>
+<h2>What we do not collect</h2>
+<p>Platerizer has no analytics software, no advertising identifier, no crash-reporting service, and no tracking of any kind, on this app or across other apps or websites. It has no accounts, no sign-up, and no email address requirement. It never uploads a photo, a video, or a location. A plate number is never stored, displayed, or searchable anywhere, by anyone, including us.</p>
+<h2>What stays on your device only</h2>
+<p>Photos of cars you have tapped, with the plate region blurred before the photo is ever written to disk; your drive history and tap counts; the local cache of hashes currently in warning state; and your app settings (for example, whether demo mode is on). None of this leaves your device, and nothing here is ever uploaded — not even to Hearthworks.</p>
+<h2>iCloud / CloudKit</h2>
+<p>The shared hash list lives in Apple's CloudKit <strong>public</strong> database, which every Platerizer user's app reads and writes to directly through Apple's infrastructure. Hearthworks does not operate a server of its own and cannot read anything beyond what is in that shared list — which, as described above, is only hashes, a hash-version number, an hour-rounded time, and Apple's automatic account identifier. Your device's own app data (photos, history, settings) is not synced through iCloud at all; it is stored locally only.</p>
+<h2>Purchases</h2>
+<p>Platerizer has no in-app purchases and no subscriptions.</p>
+<h2>Third parties</h2>
+<p>None. Every capability Platerizer uses is a built-in Apple framework (camera, on-device text recognition, CloudKit, speech). Platerizer does not send data to, or receive data from, any company other than Apple.</p>
+<h2>Children</h2>
+<p>Platerizer is not directed at children and is not intended for use by anyone under the legal driving age in their jurisdiction, since its core function requires driving. It collects no personal information typically associated with children (no name, birthdate, photo of the user, or contact information) and has no social or messaging features.</p>
+<h2>Your rights</h2>
+<p>You can delete everything Platerizer has stored on your device — history photos, drive counts, cached warnings — at any time from Settings → Delete local data, or by deleting the app. You can ask Platerizer to remove the shared reports your device still has a record of from Settings → Retract my pooled reports; this requires being signed in to iCloud. If you delete local data before retracting, your device no longer holds the information needed to retract those specific reports from the shared list — the app tells you this before you confirm the deletion. You can reach us any time with a question or a request at the contact address below.</p>
+<h2>Changes to this policy</h2>
+<p>If this policy changes, the new version replaces this page at the same address, with the effective date above updated. We will not change what this app collects without updating this document first.</p>
+<h2>Contact</h2>
+<p>mark@hearthworks.io</p>
+</main>
+<footer>
+
+<p>Contact: <a href="mailto:mark@hearthworks.io">mark@hearthworks.io</a></p>
+<p class="fine">&copy; 2026 Hearthworks. Updated 2026-09-22.
+<a href="./">Platerizer</a> &middot; <a href="support.html">Support</a></p>
+</footer>
+</body>
+</html>

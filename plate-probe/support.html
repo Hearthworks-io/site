@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Platerizer</title>
+<meta name="description" content="Support and FAQ for Platerizer by Hearthworks.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<p class="nav"><a href="../">Hearthworks</a> / <a href="./">Platerizer</a></p>
+<main>
+<h1>Support — Platerizer</h1>
+<h2>How to get help</h2>
+<p>Email <a href="mailto:mark@hearthworks.io">mark@hearthworks.io</a>. That address reaches a person, not a ticket queue.</p>
+<p>Useful things to include: your iOS version, your device, what you did, and what happened
+instead. Screenshots help. Hearthworks is a small operation, so expect a human reply rather than
+an instant one.</p>
+<h2>Common questions</h2>
+<h3>How do I get help?</h3>
+<p>Email us with your iOS version, device model, the steps you took, and a screenshot if you can. We read every message ourselves.</p>
+<h3>Where is my data stored?</h3>
+<p>Your photos, drive history, tap counts, and settings stay on your device only — nothing about them is uploaded. When you tap a car, Platerizer also shares a salted hash of the plate (not the plate itself) with other Platerizer users through Apple's CloudKit public database, along with an hour-rounded time. That hash list is not private to you; it is the shared list every Platerizer user's app reads to show warnings. Full detail is in the Privacy Policy.</p>
+<h3>How do I delete my data?</h3>
+<p>Settings has two separate actions, because they do two different things:</p>
+<ul>
+<li><strong>Delete local data</strong> removes every photo, drive record, and tap count on this device. It does not touch reports already shared with other users.</li>
+<li><strong>Retract my pooled reports</strong> removes the shared reports this device still has a record of, from the shared list other users read. This needs you to be signed in to iCloud; if it can't reach iCloud it tells you and changes nothing.</li>
+</ul>
+<p>If you want both, retract first — deleting local data first removes the record Platerizer needs to find your shared reports again on this device.</p>
+<p>Deleting the app removes everything local immediately, but not any reports you already shared; use Retract my pooled reports first if you want those gone too.</p>
+<h3>Do I need an account?</h3>
+<p>No sign-up and no password. Reporting to the shared list uses your device's existing iCloud sign-in automatically. If your device is not signed in to iCloud, you can still see warnings, but your own reports stay queued on your phone until you sign in.</p>
+<h3>Does the app work offline?</h3>
+<p>Mostly. Warnings use a list cached on your device, refreshed periodically, so they keep working without a connection (the list may be a few minutes out of date). Reporting a car and retracting a report both need a connection and an iCloud sign-in to complete; without one they queue or fail with a message telling you so, and nothing is lost.</p>
+<h2>Known limitations</h2>
+<ul>
+<li>This build is for a limited group of testers via TestFlight and is not available on the public App Store.</li>
+<li>Plate reading accuracy depends on lighting, distance, and camera angle; a car that goes unrecognized shows "No plate legible — nothing recorded" and nothing is saved.</li>
+<li>There is no way to see or search a plate number anywhere in the app, including your own reports — History shows only a blurred photo and the time.</li>
+<li>iPhone only; there is no iPad layout in this version.</li>
+</ul>
+<h2>Reporting a bug</h2>
+<p>Tell us what you were doing, what you expected, and what happened instead, plus your device model and iOS version. We read reports as they come in during the TestFlight period; we do not promise a fixed response time.</p>
+<h2>Privacy</h2>
+<p>What Platerizer stores, and what it does not, is written out in the
+<a href="privacy.html">privacy policy</a>.</p>
+</main>
+<footer>
+
+<p class="fine">&copy; 2026 Hearthworks. Updated 2026-09-22.
+<a href="./">Platerizer</a> &middot; <a href="privacy.html">Privacy</a></p>
+</footer>
+</body>
+</html>
